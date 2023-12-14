@@ -17,8 +17,8 @@ session_start();
 <style>
 
  
-   
-  
+
+ 
         * {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             box-sizing: border-box;
@@ -35,6 +35,12 @@ session_start();
             color: #fff;
         }
 
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         form {
             background-color: #fff;
             padding: 20px;
@@ -43,6 +49,7 @@ session_start();
             width: 300px;
             text-align: center;
             color: #000;
+            margin-bottom: 20px;
         }
 
         input {
@@ -54,7 +61,7 @@ session_start();
             border-radius: 4px;
         }
 
-        button, a {
+        button {
             background-color: #000;
             color: #fff;
             padding: 10px 15px;
@@ -73,6 +80,20 @@ session_start();
         button[name="log-out"] {
             background-color: #d9534f;
         }
+
+        .register-panel {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            color: #000;
+        }
+
+
+
+
   
  </style>
 
@@ -115,7 +136,7 @@ if (isset($_POST["password"], $_POST["login"])) {
     <a href="./register.php">Rejestracja</a>
 
     <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
-        <button type="submit" name="log-out">wyloguj sie</button>
+        <button type="submit" name="log-out">Wyloguj sie</button>
     </form>
 </body>
 
