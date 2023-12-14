@@ -11,7 +11,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Strona guwna</title>
+    <link rel="shortcut icon" href="/assets/img/zdj.png">
     <style>
         * {
             box-sizing: border-box;
@@ -100,7 +101,7 @@ session_start();
             display: block;
             margin-top: 10px;
             text-decoration: none;
-            color: #fff;
+            color: black;
         }
 
         a:hover {
@@ -121,9 +122,10 @@ session_start();
             color: #000;
         }
 
-        .bok, .regpal {
-            
-        }
+        .bok{
+
+        } 
+    
     </style>
 </head>
 <div class="regpal">
