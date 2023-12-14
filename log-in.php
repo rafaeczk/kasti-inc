@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-     * {
+        * {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             box-sizing: border-box;
             margin: 0;
@@ -32,7 +32,7 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
             color: #333;
@@ -55,6 +55,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         button:hover {
@@ -65,11 +66,11 @@
             display: block;
             margin-top: 10px;
             text-decoration: none;
-            color: black;
+            color: #4285f4;
         }
 
         a:hover {
-            color: #bbb;
+            color: #3367d6; 
         }
 
         button[name="log-out"] {
@@ -80,12 +81,11 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
-            color: black;
+            color: #333;
         }
-        
     </style>
 </head>
 
@@ -99,20 +99,19 @@
     }
     ?>
 
-    <form action="log-in.php" method="post" <?php if (!$showLogInForm) echo "hidden" ?>>
+    <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
         <input required type="text" name="login" placeholder='Nazwa'>
         <input required type="password" name="password" placeholder='Hasło'>
         <button type="submit">Zaloguj</button>
     </form>
-
 
     <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
         <button type="submit" name="log-out">Wyloguj się</button>
     </form>
 
     <div class="register-panel">
-        <p>Nie masz konta?  </p>
-        <a href="./register.php"><b>Zarejestruj się<b></a>
+        <p>Nie masz konta? </p>
+        <a href="./register.php"><b>Zarejestruj się</b></a>
     </div>
 </body>
 
