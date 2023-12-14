@@ -1,6 +1,8 @@
 <?php
-session_start();
-require("components/SideBar.php");
+require "components/SideBar.php";
+require "components/AuthGurad.php";
+require "db/delivery-men/getDeliveryMen.php";
+require "components/Table.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +14,12 @@ require("components/SideBar.php");
 </head>
 <body>
 
-<?php
+<?php echo SideBar("Kurierzy") ?>
 
-if(!isset($_SESSION['userId'])){
-    echo "nie jestes zalogowany <a href=log-in.php>zaloguj sie</a>";
-    exit();
-}
+<?php
+    $deliveryMen = getDeliveryMen();
+    echo Table(["id", 'imie', 'nazwisko', 'tel', 'godziny od', 'godziny do', 'idoddzialu'], $deliveryMen);
 ?>
 
-<?php echo SideBar("Kurierzy") ?>
 </body>
 </html>
