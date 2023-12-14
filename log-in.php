@@ -68,9 +68,21 @@ session_start();
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            border: 0.5rem solid transparent;
+
+
+border-image:
+  conic-gradient(
+    from var(--angle),
+    #d53e33 0deg 90deg,
+    #fbb300 90deg 180deg,
+    #377af5 180deg 270deg,
+    #399953 270deg 360deg
+  ) 1
+            
         }
 
-        a, #regi {
+        a {
             display: block;
             margin-top: 10px;
             text-decoration: none;
