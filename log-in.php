@@ -12,6 +12,11 @@
             padding: 0;
         }
 
+        h1{
+            justify-content: center;
+            font-size: 50px;
+            color: whitesmoke;
+        }
         body {
             display: flex;
             align-items: center;
@@ -90,6 +95,7 @@
 </head>
 
 <body>
+    <h1>KASTI INDUSTRIES</h1>
     <?php
     $showLogInForm = true;
     if (isset($_SESSION['userId'])) {
