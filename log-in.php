@@ -54,7 +54,7 @@ session_start();
             border-radius: 4px;
         }
 
-        button {
+        button, a {
             background-color: #000;
             color: #fff;
             padding: 10px 15px;
