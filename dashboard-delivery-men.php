@@ -20,6 +20,6 @@ if(!isset($_SESSION['userId'])){
 }
 ?>
 
-<?php echo SideBar("") ?>
+<?php echo SideBar("Kurierzy") ?>
 </body>
 </html>
