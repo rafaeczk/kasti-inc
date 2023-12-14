@@ -100,9 +100,9 @@ session_start();
             color: #000;
         }
 
-        .bok {
-            position: -20px;
-            width: 300px;
+        .bok, .regpal {
+            
+            width: auto;
             height: auto;
             
             border: 10px solid;
@@ -123,7 +123,7 @@ session_start();
         }
     </style>
 </head>
-
+<div class="regpal">
 <?php
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
@@ -174,6 +174,7 @@ if (isset($_POST["password"], $_POST["login"])) {
             <p>Nie masz konta? </p>
             <a href="./register.php"><b>Zarejestruj się</b></a>
         </div>
+</div>
     </main>
 </body>
 
