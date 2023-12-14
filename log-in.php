@@ -18,8 +18,7 @@ session_start();
 
  
 
- 
-        * {
+* {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             box-sizing: border-box;
             margin: 0;
@@ -31,7 +30,7 @@ session_start();
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #000;
+            background-color: #333;
             color: #fff;
         }
 
@@ -57,29 +56,21 @@ session_start();
             margin-bottom: 10px;
             padding: 10px;
             box-sizing: border-box;
-            border: 1px solid #000;
+            border: 1px solid #ccc;
             border-radius: 4px;
         }
 
         button {
-            background-color: #000;
+            background-color: #333;
             color: #fff;
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            border: 0.5rem solid transparent;
+        }
 
-
-border-image:
-  conic-gradient(
-    from var(--angle),
-    #d53e33 0deg 90deg,
-    #fbb300 90deg 180deg,
-    #377af5 180deg 270deg,
-    #399953 270deg 360deg
-  ) 1
-            
+        button:hover {
+            background-color: #555;
         }
 
         a {
@@ -87,6 +78,10 @@ border-image:
             margin-top: 10px;
             text-decoration: none;
             color: #fff;
+        }
+
+        a:hover {
+            color: #bbb;
         }
 
         button[name="log-out"] {
@@ -102,7 +97,6 @@ border-image:
             text-align: center;
             color: #000;
         }
-
 
 
 
