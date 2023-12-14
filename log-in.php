@@ -70,7 +70,7 @@ session_start();
             cursor: pointer;
         }
 
-        a {
+        a, #regi {
             display: block;
             margin-top: 10px;
             text-decoration: none;
@@ -133,7 +133,7 @@ if (isset($_POST["password"], $_POST["login"])) {
         <button type="submit">Zaloguj</button>
     </form>
 
-   <div class="register-panel"> <a href="./register.php" class="regi">Rejestracja</a> </div>
+    <a href="./register.php" class="regi">Rejestracja</a> 
 
     <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
         <button type="submit" name="log-out">Wyloguj sie</button>
