@@ -37,7 +37,7 @@ session_start();
             background-color: #000;
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            
+
             border: 10px solid;
             border-image: linear-gradient(45deg, gold, deeppink) 1;
             clip-path: inset(0px round 10px);
@@ -53,8 +53,8 @@ session_start();
             100% {
                 filter: hue-rorate(360deg);
             }
-        
-           
+
+
         }
 
         main {
@@ -122,65 +122,65 @@ session_start();
             color: #000;
         }
 
-        .bok{
+        .bok {
+            justify-content: center;
 
-        } 
-    
+        }
     </style>
 </head>
 <div class="regpal">
-<?php
-
-if (isset($_POST['log-out'], $_SESSION['userId'])) {
-    $_SESSION['userId'] = null;
-    echo "wylogowano <a href>logowanie</a>";
-    exit();
-}
-
-if (isset($_POST["password"], $_POST["login"])) {
-    $login = mysqli_real_escape_string(DB, trim($_POST["login"]));
-    $password = mysqli_real_escape_string(DB, trim($_POST['password']));
-
-    $foundUser = findUserByLogin($login);
-
-    if (password_verify($password, $foundUser['password'])) {
-        $_SESSION['userId'] = $foundUser['id_konta'];
-    }
-}
-?>
-
-<body>
-    <div class="bok">
-        <img src="./assets/img/zdj.png">
-        <h1>KASTI INDUSTRIES</h1>
-        <br>
-    </div>
     <?php
-    $showLogInForm = true;
-    if (isset($_SESSION['userId'])) {
-        $foundUser = findUserByUserId($_SESSION['userId']);
-        echo "Jesteś zalogowany jako: " . $foundUser['login'];
-        $showLogInForm = false;
+
+    if (isset($_POST['log-out'], $_SESSION['userId'])) {
+        $_SESSION['userId'] = null;
+        echo "wylogowano <a href>logowanie</a>";
+        exit();
+    }
+
+    if (isset($_POST["password"], $_POST["login"])) {
+        $login = mysqli_real_escape_string(DB, trim($_POST["login"]));
+        $password = mysqli_real_escape_string(DB, trim($_POST['password']));
+
+        $foundUser = findUserByLogin($login);
+
+        if (password_verify($password, $foundUser['password'])) {
+            $_SESSION['userId'] = $foundUser['id_konta'];
+        }
     }
     ?>
 
-    <main>
-        <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
-            <input required type="text" name="login" placeholder='Nazwa'>
-            <input required type="password" name="password" placeholder='Hasło'>
-            <button type="submit">Zaloguj</button>
-        </form>
-
-        <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
-            <button type="submit" name="log-out">Wyloguj się</button>
-        </form>
-
-        <div class="register-panel">
-            <p>Nie masz konta? </p>
-            <a href="./register.php"><b>Zarejestruj się</b></a>
+    <body>
+        <div class="bok">
+            <img src="./assets/img/zdj.png">
+            <h1>KASTI INDUSTRIES</h1>
+            <br>
         </div>
+        <?php
+        $showLogInForm = true;
+        if (isset($_SESSION['userId'])) {
+            $foundUser = findUserByUserId($_SESSION['userId']);
+            echo "Jesteś zalogowany jako: " . $foundUser['login'];
+            $showLogInForm = false;
+        }
+        ?>
+
+        <main>
+            <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
+                <input required type="text" name="login" placeholder='Nazwa'>
+                <input required type="password" name="password" placeholder='Hasło'>
+                <button type="submit">Zaloguj</button>
+            </form>
+
+            <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
+                <button type="submit" name="log-out">Wyloguj się</button>
+            </form>
+
+            <div class="register-panel">
+                <p>Nie masz konta? </p>
+                <a href="./register.php"><b>Zarejestruj się</b></a>
+            </div>
 </div>
-    </main>
+</main>
 </body>
 
 </html>

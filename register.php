@@ -85,10 +85,13 @@ require_once("db/connectDB.php");
         }
 
         a {
-            display: block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: black;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         a:hover {
