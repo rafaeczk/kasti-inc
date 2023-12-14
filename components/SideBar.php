@@ -58,6 +58,9 @@ function SideBar(string $currentItem)
                 margin: 0 30px;
                 text-align: center;
             }
+            body{
+                margin-left: 400px;
+            }
         </style>
         <section id='sidebar'>
             <div class='logo'>
