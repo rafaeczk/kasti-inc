@@ -123,7 +123,7 @@ session_start();
         }
     </style>
 </head>
-<div class="regpal">
+<!--<div class="regpal">
 <?php
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
