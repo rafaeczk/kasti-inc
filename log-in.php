@@ -110,8 +110,8 @@
     </form>
 
     <div class="register-panel">
-        <p>Nie masz konta? Zarejestruj się</p>
-        <a href="./register.php">Zarejestruj się</a>
+        <p>Nie masz konta?  </p>
+        <a href="./register.php"><b>Zarejestruj się<b></a>
     </div>
 </body>
 
