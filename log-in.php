@@ -135,6 +135,33 @@ session_start();
     </style>
 </head>
 <div class="regpal">
+<?php
+
+if (isset($_POST['log-out'], $_SESSION['userId'])) {
+    $_SESSION['userId'] = null;
+    echo "wylogowano <a href>logowanie</a>";
+    exit();
+}
+
+if (isset($_POST["password"], $_POST["login"])) {
+    $login = mysqli_real_escape_string(DB, trim($_POST["login"]));
+    $password = mysqli_real_escape_string(DB, trim($_POST['password']));
+
+    $foundUser = findUserByLogin($login);
+
+    if (password_verify($password, $foundUser['password'])) {
+        $_SESSION['userId'] = $foundUser['id_konta'];
+        header("location: dashboard-start.php");
+    }
+}
+?>
+
+<body>
+    <div class="bok">
+        <img src="./assets/img/zdj.png">
+        <h1>KASTI INDUSTRIES</h1>
+        <br>
+    </div>
     <?php
 
     if (isset($_POST['log-out'], $_SESSION['userId'])) {

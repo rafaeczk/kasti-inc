@@ -62,8 +62,21 @@ function SideBar(string $currentItem)
                 margin: 0 30px;
                 text-align: center;
             }
-            body{
+            body {
                 margin-left: 400px;
+            }
+            button#log-out-btn {
+                display: block;
+                outline: none;
+                border: none;
+                background-color: red;
+                color: white;
+                width: 100%;
+                padding: 10px;
+            }
+            button#log-out-btn:hover {
+                text-decoration: underline;
+                cursor: pointer;
             }
         </style>
         <section id='sidebar'>
@@ -71,6 +84,10 @@ function SideBar(string $currentItem)
                 KASTI INC
             </div>
             $items
+
+            <form action='log-in.php' method='post'>
+                <button type='submit' name='log-out' id='log-out-btn'>Wyloguj się</button>
+            </form>
         </section>
     ";
 }
