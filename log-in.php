@@ -19,11 +19,12 @@ session_start();
             padding: 0;
         }
 
-        h1{
+        h1 {
             justify-content: center;
             font-size: 50px;
             color: whitesmoke;
         }
+
         body {
             display: flex;
             align-items: center;
@@ -98,9 +99,31 @@ session_start();
             text-align: center;
             color: #000;
         }
+
+        .bok, .regpal {
+            
+            width: auto;
+            height: auto;
+            
+            border: 10px solid;
+            border-image: linear-gradient(45deg, gold, deeppink) 1;
+            clip-path: inset(0px round 10px);
+            animation: huerotate 6s infinite linear;
+            filter: hue-rotate(360deg);
+        }
+
+        @keyframes huerotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rorate(360deg);
+            }
+        }
     </style>
 </head>
-
+<div class="regpal">
 <?php
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
@@ -126,8 +149,11 @@ if (isset($_POST["password"], $_POST["login"])) {
 ?>
 
 <body>
-    <h1>KASTI INDUSTRIES</h1>
-    <br>
+    <div class="bok">
+        <img src="./assets/img/zdj.png">
+        <h1>KASTI INDUSTRIES</h1>
+        <br>
+    </div>
     <?php
     $showLogInForm = true;
     if (isset($_SESSION['userId'])) {
@@ -152,6 +178,7 @@ if (isset($_POST["password"], $_POST["login"])) {
             <p>Nie masz konta? </p>
             <a href="./register.php"><b>Zarejestruj się</b></a>
         </div>
+</div>
     </main>
 </body>
 
