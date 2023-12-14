@@ -101,10 +101,10 @@ session_start();
         }
 
         .bok {
-            position:left;
-            width: auto;
+            position: -20px;
+            width: 300px;
             height: auto;
-            margin: auto;
+            
             border: 10px solid;
             border-image: linear-gradient(45deg, gold, deeppink) 1;
             clip-path: inset(0px round 10px);
