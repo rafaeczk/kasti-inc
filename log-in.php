@@ -129,7 +129,6 @@ session_start();
     </style>
 </head>
 <div class="regpal">
-<<<<<<< HEAD
 <?php
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
@@ -157,8 +156,6 @@ if (isset($_POST["password"], $_POST["login"])) {
         <h1>KASTI INDUSTRIES</h1>
         <br>
     </div>
-=======
->>>>>>> a5bf4552ce4f9d8e9beb2198229f392a6955e05f
     <?php
 
     if (isset($_POST['log-out'], $_SESSION['userId'])) {
