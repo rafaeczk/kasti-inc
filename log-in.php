@@ -17,7 +17,65 @@ session_start();
 <style>
 
  *{
-    color: red;
+   
+        * {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        button[name="log-out"] {
+            background-color: #d9534f;
+        }
+
+        
+
+    
+
+    
  }
  </style>
 
@@ -25,7 +83,7 @@ session_start();
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
     $_SESSION['userId'] = null;
-    echo "wylogowano <a href>logowanie</a>";
+    echo "wylogowano <a href>Logowanie</a>";
     exit();
 }
 
@@ -57,7 +115,7 @@ if (isset($_POST["password"], $_POST["login"])) {
         <button type="submit">Zaloguj</button>
     </form>
 
-    <a href="./register.php">rejestracja</a>
+    <a href="./register.php">Rejestracja</a>
 
     <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
         <button type="submit" name="log-out">wyloguj sie</button>
