@@ -2,6 +2,10 @@
 
 define("SideBarItems", [
     [
+        "label" => "Start",
+        "url"   => "./dashboard-start.php"
+    ],
+    [
         "label" => "Kurierzy",
         "url"   => "./dashboard-delivery-men.php"
     ], [
