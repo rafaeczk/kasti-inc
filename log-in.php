@@ -65,7 +65,7 @@
             display: block;
             margin-top: 10px;
             text-decoration: none;
-            color: #fff;
+            color: black;
         }
 
         a:hover {
@@ -83,7 +83,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
-            color: #333;
+            color: black;
         }
     </style>
 </head>
@@ -104,7 +104,6 @@
         <button type="submit">Zaloguj</button>
     </form>
 
-    <a href="./register.php">Rejestracja</a>
 
     <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
         <button type="submit" name="log-out">Wyloguj się</button>
