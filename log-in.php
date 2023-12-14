@@ -16,8 +16,9 @@ session_start();
 
 <style>
 
- *{
+ 
    
+  
         * {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             box-sizing: border-box;
@@ -30,16 +31,18 @@ session_start();
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background-color: #000;
+            color: #fff;
         }
 
         form {
-            background-color: #ffffff;
+            background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 300px;
             text-align: center;
+            color: #000;
         }
 
         input {
@@ -47,13 +50,13 @@ session_start();
             margin-bottom: 10px;
             padding: 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid #000;
             border-radius: 4px;
         }
 
         button {
-            background-color: #4caf50;
-            color: white;
+            background-color: #000;
+            color: #fff;
             padding: 10px 15px;
             border: none;
             border-radius: 4px;
@@ -64,19 +67,13 @@ session_start();
             display: block;
             margin-top: 10px;
             text-decoration: none;
-            color: #333;
+            color: #fff;
         }
 
         button[name="log-out"] {
             background-color: #d9534f;
         }
-
-        
-
-    
-
-    
- }
+  
  </style>
 
 <?php
