@@ -1,3 +1,10 @@
+<?php
+require("db/users/findUserByLogin.php");
+require("db/users/findUserByUserId.php");
+require_once("db/connectDB.php");
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -93,6 +100,26 @@
         }
     </style>
 </head>
+
+<?php
+
+if (isset($_POST['log-out'], $_SESSION['userId'])) {
+    $_SESSION['userId'] = null;
+    echo "wylogowano <a href>logowanie</a>";
+    exit();
+}
+
+if (isset($_POST["password"], $_POST["login"])) {
+    $login = mysqli_real_escape_string(DB, trim($_POST["login"]));
+    $password = mysqli_real_escape_string(DB, trim($_POST['password']));
+
+    $foundUser = findUserByLogin($login);
+
+    if (password_verify($password, $foundUser['password'])) {
+        $_SESSION['userId'] = $foundUser['id_konta'];
+    }
+}
+?>
 
 <body>
     <h1>KASTI INDUSTRIES</h1>
