@@ -145,6 +145,7 @@ if (isset($_POST["password"], $_POST["login"])) {
 
     if (password_verify($password, $foundUser['password'])) {
         $_SESSION['userId'] = $foundUser['id_konta'];
+        header("location: dashboard-start.php");
     }
 }
 ?>
