@@ -14,6 +14,13 @@ session_start();
     <title>Document</title>
 </head>
 
+<style>
+
+ *{
+    color: red;
+ }
+ </style>
+
 <?php
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
