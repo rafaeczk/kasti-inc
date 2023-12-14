@@ -14,17 +14,17 @@ session_start();
     <title>Strona guwna</title>
     <link rel="shortcut icon" href="/assets/img/zdj.png">
     <style>
-        * {
+         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-
         }
 
         h1 {
             justify-content: center;
             font-size: 50px;
             color: whitesmoke;
+            margin-left: 20px;
         }
 
         body {
@@ -32,7 +32,7 @@ session_start();
             height: auto;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; 
             height: 100vh;
             background-color: #000;
             color: #fff;
@@ -51,16 +51,15 @@ session_start();
             }
 
             100% {
-                filter: hue-rorate(360deg);
+                filter: hue-rotate(360deg);
             }
-
-
         }
 
         main {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            margin-left: 20px; 
         }
 
         form {
@@ -123,8 +122,15 @@ session_start();
         }
 
         .bok {
-            justify-content: center;
+            justify-content: flex-start; 
+            margin-left: 20px; 
+        }
 
+        .regpal {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            margin-left: 20px;
         }
     </style>
 </head>
