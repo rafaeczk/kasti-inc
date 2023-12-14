@@ -17,6 +17,7 @@ session_start();
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+
         }
 
         h1 {
@@ -26,6 +27,8 @@ session_start();
         }
 
         body {
+            width: auto;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -33,6 +36,24 @@ session_start();
             background-color: #000;
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+            border: 10px solid;
+            border-image: linear-gradient(45deg, gold, deeppink) 1;
+            clip-path: inset(0px round 10px);
+            animation: huerotate 6s infinite linear;
+            filter: hue-rotate(360deg);
+        }
+
+        @keyframes huerotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rorate(360deg);
+            }
+        
+           
         }
 
         main {
@@ -102,24 +123,6 @@ session_start();
 
         .bok, .regpal {
             
-            width: auto;
-            height: auto;
-            
-            border: 10px solid;
-            border-image: linear-gradient(45deg, gold, deeppink) 1;
-            clip-path: inset(0px round 10px);
-            animation: huerotate 6s infinite linear;
-            filter: hue-rotate(360deg);
-        }
-
-        @keyframes huerotate {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-
-            100% {
-                filter: hue-rorate(360deg);
-            }
         }
     </style>
 </head>
@@ -145,7 +148,7 @@ if (isset($_POST["password"], $_POST["login"])) {
 ?>
 
 <body>
-   <!-- <div class="bok">!-->
+    <div class="bok">
         <img src="./assets/img/zdj.png">
         <h1>KASTI INDUSTRIES</h1>
         <br>
