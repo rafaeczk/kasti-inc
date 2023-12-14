@@ -123,7 +123,7 @@ session_start();
         }
     </style>
 </head>
-<!--<div class="regpal">
+<div class="regpal">
 <?php
 
 if (isset($_POST['log-out'], $_SESSION['userId'])) {
@@ -138,18 +138,14 @@ if (isset($_POST["password"], $_POST["login"])) {
 
     $foundUser = findUserByLogin($login);
 
-    if($foundUser)
-        if (password_verify($password, $foundUser['password'])) 
-            $_SESSION['userId'] = $foundUser['id_konta'];
-        else
-            echo "<script>alert('zle dane')</script>";
-    else
-        echo "<script>alert('nie ma takiego konta')</script>";
+    if (password_verify($password, $foundUser['password'])) {
+        $_SESSION['userId'] = $foundUser['id_konta'];
+    }
 }
 ?>
 
 <body>
-    <div class="bok">
+   <!-- <div class="bok">!-->
         <img src="./assets/img/zdj.png">
         <h1>KASTI INDUSTRIES</h1>
         <br>
