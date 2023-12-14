@@ -133,7 +133,7 @@ if (isset($_POST["password"], $_POST["login"])) {
         <button type="submit">Zaloguj</button>
     </form>
 
-    <a href="./register.php">Rejestracja</a>
+   <div class="register-panel"> <a href="./register.php" class="regi">Rejestracja</a> </div>
 
     <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
         <button type="submit" name="log-out">Wyloguj sie</button>
