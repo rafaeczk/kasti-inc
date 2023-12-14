@@ -7,7 +7,6 @@
     <title>Document</title>
     <style>
         * {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -18,8 +17,9 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #333;
+            background-color: #000;
             color: #fff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         main {
@@ -35,7 +35,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
-            color: #333;
+            color: #000;
             margin-bottom: 20px;
         }
 
@@ -44,12 +44,12 @@
             margin-bottom: 10px;
             padding: 10px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid #000;
             border-radius: 4px;
         }
 
         button {
-            background-color: #333;
+            background-color: #000;
             color: #fff;
             padding: 10px 15px;
             border: none;
@@ -59,18 +59,18 @@
         }
 
         button:hover {
-            background-color: #555;
+            background-color: #333;
         }
 
         a {
             display: block;
             margin-top: 10px;
             text-decoration: none;
-            color: #4285f4;
+            color: #fff;
         }
 
         a:hover {
-            color: #3367d6; 
+            color: #ccc;
         }
 
         button[name="log-out"] {
@@ -84,7 +84,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
-            color: #333;
+            color: #000;
         }
     </style>
 </head>
@@ -99,20 +99,22 @@
     }
     ?>
 
-    <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
-        <input required type="text" name="login" placeholder='Nazwa'>
-        <input required type="password" name="password" placeholder='Hasło'>
-        <button type="submit">Zaloguj</button>
-    </form>
+    <main>
+        <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
+            <input required type="text" name="login" placeholder='Nazwa'>
+            <input required type="password" name="password" placeholder='Hasło'>
+            <button type="submit">Zaloguj</button>
+        </form>
 
-    <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
-        <button type="submit" name="log-out">Wyloguj się</button>
-    </form>
+        <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
+            <button type="submit" name="log-out">Wyloguj się</button>
+        </form>
 
-    <div class="register-panel">
-        <p>Nie masz konta? </p>
-        <a href="./register.php"><b>Zarejestruj się</b></a>
-    </div>
+        <div class="register-panel">
+            <p>Nie masz konta? </p>
+            <a href="./register.php"><b>Zarejestruj się</b></a>
+        </div>
+    </main>
 </body>
 
 </html>
