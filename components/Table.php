@@ -7,7 +7,7 @@ function Table(array $headers, array $data)
 {
     $thead = "";
     foreach ($headers as $header) 
-        $thead .= "<td>$header</td>";
+        $thead .= "<th>$header</th>";
     $thead = "<thead><tr>$thead</tr></thead>";
 
     $tbody = "";
@@ -22,7 +22,7 @@ function Table(array $headers, array $data)
     $tbody = "<tbody>$tbody</tbody>";
 
     return "
-        <table border=1>
+        <table class='table'>
             $thead
             $tbody
         </table>
