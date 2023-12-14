@@ -11,12 +11,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Strona guwna</title>
+    <link rel="shortcut icon" href="/assets/img/zdj.png">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+
         }
 
         h1 {
@@ -26,6 +28,8 @@ session_start();
         }
 
         body {
+            width: auto;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -33,6 +37,24 @@ session_start();
             background-color: #000;
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            
+            border: 10px solid;
+            border-image: linear-gradient(45deg, gold, deeppink) 1;
+            clip-path: inset(0px round 10px);
+            animation: huerotate 6s infinite linear;
+            filter: hue-rotate(360deg);
+        }
+
+        @keyframes huerotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rorate(360deg);
+            }
+        
+           
         }
 
         main {
@@ -79,7 +101,7 @@ session_start();
             display: block;
             margin-top: 10px;
             text-decoration: none;
-            color: #fff;
+            color: black;
         }
 
         a:hover {
@@ -100,27 +122,10 @@ session_start();
             color: #000;
         }
 
-        .bok, .regpal {
-            
-            width: auto;
-            height: auto;
-            
-            border: 10px solid;
-            border-image: linear-gradient(45deg, gold, deeppink) 1;
-            clip-path: inset(0px round 10px);
-            animation: huerotate 6s infinite linear;
-            filter: hue-rotate(360deg);
-        }
+        .bok{
 
-        @keyframes huerotate {
-            0% {
-                filter: hue-rotate(0deg);
-            }
-
-            100% {
-                filter: hue-rorate(360deg);
-            }
-        }
+        } 
+    
     </style>
 </head>
 <div class="regpal">
@@ -138,13 +143,9 @@ if (isset($_POST["password"], $_POST["login"])) {
 
     $foundUser = findUserByLogin($login);
 
-    if($foundUser)
-        if (password_verify($password, $foundUser['password'])) 
-            $_SESSION['userId'] = $foundUser['id_konta'];
-        else
-            echo "<script>alert('zle dane')</script>";
-    else
-        echo "<script>alert('nie ma takiego konta')</script>";
+    if (password_verify($password, $foundUser['password'])) {
+        $_SESSION['userId'] = $foundUser['id_konta'];
+    }
 }
 ?>
 
