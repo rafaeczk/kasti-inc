@@ -17,6 +17,9 @@ define("SideBarItems", [
         "icon" => "fa-solid fa-users",
         "url"   => "./klienci.php"
     ], [
+        "label" => "Przesyłki",
+        "url"   => "./dashboard-delivery.php"
+    ], [
         "label" => "Kartoteka Sprzętu",
         "icon" => "",
         "url"   => "./kartoteka.php"
