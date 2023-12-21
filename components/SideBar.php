@@ -35,16 +35,20 @@ function SideBar(string $currentItem)
                 top: 0;
                 bottom: 0;
                 width: 300px;
-                background-color: gray;
-                color: white;
+                background-color: #000;
+                color: #fff;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 padding: 50px 0;
+                border: 10px solid;
+                border-image: linear-gradient(45deg, gold, deeppink) 1;
+                clip-path: inset(0px round 10px);
+                animation: huerotate 6s infinite linear;
+                filter: hue-rotate(360deg);
             }
             #sidebar > .sidebar-item {
-                color: white;
-                background-color: rgb(255, 255, 255, .2);
+                color: #fff;
                 font-size: 20px;
                 padding: 10px;
                 text-decoration: none;
@@ -69,8 +73,8 @@ function SideBar(string $currentItem)
                 display: block;
                 outline: none;
                 border: none;
-                background-color: red;
-                color: white;
+                background-color: #d9534f;
+                color: #fff;
                 width: 100%;
                 padding: 10px;
             }
@@ -91,3 +95,4 @@ function SideBar(string $currentItem)
         </section>
     ";
 }
+?>
