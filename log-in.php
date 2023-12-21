@@ -132,6 +132,9 @@ session_start();
             justify-content: flex-start; 
             margin-left: 20px;
         }
+        .kurwa{
+            justify-content: center;
+        }
     </style>
 </head>
 <div class="regpal">
@@ -179,8 +182,7 @@ if (isset($_POST["password"], $_POST["login"])) {
 
     <body>
         <div class="bok">
-            <img src="./assets/img/zdj.png">
-            <h1>KASTI INDUSTRIES</h1>
+          
             <br>
         </div>
         <?php
@@ -193,6 +195,7 @@ if (isset($_POST["password"], $_POST["login"])) {
         ?>
 
         <main>
+            <div class="kurwa">
             <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
                 <input required type="text" name="login" placeholder='Nazwa'>
                 <input required type="password" name="password" placeholder='Hasło'>
@@ -206,7 +209,7 @@ if (isset($_POST["password"], $_POST["login"])) {
             <div class="register-panel">
                 <p>Nie masz konta? </p>
                 <a href="./register.php"><b>Zarejestruj się</b></a>
-            </div>
+            </div></div>
 </div>
 </main>
 </body>

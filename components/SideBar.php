@@ -29,22 +29,29 @@ function SideBar(string $currentItem)
 
     return "
         <style>
+        *{
+        background-color:black;
+        }
             #sidebar {
                 position: fixed;
                 left: 0;
                 top: 0;
                 bottom: 0;
                 width: 300px;
-                background-color: gray;
-                color: white;
+                background-color: #000;
+                color: #fff;
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 padding: 50px 0;
+                border: 10px solid;
+                border-image: linear-gradient(45deg, gold, deeppink) 1;
+                clip-path: inset(0px round 10px);
+                animation: huerotate 6s infinite linear;
+                filter: hue-rotate(360deg);
             }
             #sidebar > .sidebar-item {
-                color: white;
-                background-color: rgb(255, 255, 255, .2);
+                color: #fff;
                 font-size: 20px;
                 padding: 10px;
                 text-decoration: none;
@@ -69,8 +76,8 @@ function SideBar(string $currentItem)
                 display: block;
                 outline: none;
                 border: none;
-                background-color: red;
-                color: white;
+                background-color: #d9534f;
+                color: #fff;
                 width: 100%;
                 padding: 10px;
             }
@@ -88,6 +95,8 @@ function SideBar(string $currentItem)
             <form action='log-in.php' method='post'>
                 <button type='submit' name='log-out' id='log-out-btn'>Wyloguj się</button>
             </form>
+            <div class='tenor-gif-embed' data-postid='18396886' data-share-method='host' data-aspect-ratio='1' data-width='100%'><a href='https://tenor.com/view/thumbs-up-okay-gif-18396886'></a>from <a href='https://tenor.com/search/thumbs-gifs'></a></div> <script type='text/javascript' async src='https://tenor.com/embed.js'></script>
         </section>
     ";
 }
+?>
