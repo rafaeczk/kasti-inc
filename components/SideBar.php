@@ -29,6 +29,9 @@ function SideBar(string $currentItem)
 
     return "
         <style>
+        *{
+        background-color:black;
+        }
             #sidebar {
                 position: fixed;
                 left: 0;
