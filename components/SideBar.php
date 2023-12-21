@@ -92,6 +92,7 @@ function SideBar(string $currentItem)
             <form action='log-in.php' method='post'>
                 <button type='submit' name='log-out' id='log-out-btn'>Wyloguj się</button>
             </form>
+            <div class='tenor-gif-embed' data-postid='18650076' data-share-method='host' data-aspect-ratio='0.8' data-width='100%'><a href='https://tenor.com/view/epic-moves-gaming-john-jefferson-my-name-jeff-epic-gif-18650076'></a>from <a href='https://tenor.com/search/epic+moves-stickers'></a></div> <script type='text/javascript' async src='https://tenor.com/embed.js'></script>
         </section>
     ";
 }
