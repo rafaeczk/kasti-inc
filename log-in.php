@@ -11,34 +11,23 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona guwna</title>
+    <title>Strona główna</title>
     <link rel="shortcut icon" href="/assets/img/zdj.png">
     <style>
-         * {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            justify-content: center;
-            font-size: 50px;
-            color: whitesmoke;
-            margin-left: 20px;
         }
 
         body {
-            width: auto;
-            height: auto;
             display: flex;
             align-items: center;
-            justify-content: flex-start; 
+            justify-content: center;
             height: 100vh;
             background-color: #000;
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
             border: 10px solid;
             border-image: linear-gradient(45deg, gold, deeppink) 1;
             clip-path: inset(0px round 10px);
@@ -59,8 +48,7 @@ session_start();
         main {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            margin-left: 20px; 
+            align-items: center;
         }
 
         form {
@@ -123,62 +111,33 @@ session_start();
         }
 
         .bok {
-            justify-content: flex-start; 
-            margin-left: 20px; 
+            margin-bottom: 20px;
         }
 
-        .regpal {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; 
-            margin-left: 20px;
+        .kurwa {
+            margin-bottom: 20px;
         }
-        .kurwa{
-            justify-content: center;
+
+        .success-message {
+            font-size: 18px;
+            color: limegreen;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 18px;
+            color: red;
+            margin-bottom: 20px;
         }
     </style>
 </head>
-<div class="regpal">
-<?php
-
-if (isset($_POST['log-out'], $_SESSION['userId'])) {
-    $_SESSION['userId'] = null;
-    echo "wylogowano <a href>logowanie</a>";
-    exit();
-}
-
-if (isset($_POST["password"], $_POST["login"])) {
-    $login = mysqli_real_escape_string(DB, trim($_POST["login"]));
-    $password = mysqli_real_escape_string(DB, trim($_POST['password']));
-
-    $foundUser = findUserByLogin($login);
-
-    if (password_verify($password, $foundUser['password'])) {
-        $_SESSION['userId'] = $foundUser['id_konta'];
-        header("location: dashboard-start.php");
-    }
-}
-?>
 
 <body>
     <?php
-
     if (isset($_POST['log-out'], $_SESSION['userId'])) {
         $_SESSION['userId'] = null;
-        echo"<style>
-        .link{
-            font-size;40px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            text-align: center;
-            color: #000;
-            
-        }
-        </style>";
-        echo "Wylogowano <a href id='link'>logowanie</a>";
+        echo "<style>.success-message{display:block;}</style>";
+        echo "<div class='success-message'>Wylogowano <a href id='link'>logowanie</a></div>";
         exit();
     }
 
@@ -190,27 +149,50 @@ if (isset($_POST["password"], $_POST["login"])) {
 
         if (password_verify($password, $foundUser['password'])) {
             $_SESSION['userId'] = $foundUser['id_konta'];
+            header("location: dashboard-start.php");
+        } else {
+            echo "<style>.error-message{display:block;}</style>";
+            echo "<div class='error-message'>Błędne hasło</div>";
         }
     }
     ?>
 
-    <body>
-        <div class="bok">
-          
-            <br>
-        </div>
-        <?php
-        $showLogInForm = true;
-        if (isset($_SESSION['userId'])) {
-            $foundUser = findUserByUserId($_SESSION['userId']);
-            echo "Jesteś zalogowany jako: " . $foundUser['login'];
-            $showLogInForm = false;
-        }
-        ?>
+    <div class="bok"></div>
 
-        <main>
-            <div class="kurwa">
-            <form action="log-in.php" method="post" <?php if (!$showLogInForm) ?>>
+    <?php
+    $showLogInForm = true;
+    if (isset($_SESSION['userId'])) {
+        $foundUser = findUserByUserId($_SESSION['userId']);
+        echo "<div class='success-message'>Jesteś zalogowany jako: " . $foundUser['login'] . "</div>";
+        $showLogInForm = false;
+    }
+    ?>
+
+
+    <main>
+        <div class="kurwa">
+            <form action="log-in.php" method="post">
+                <input required type="text" name="login" placeholder='Nazwa'>
+                <input required type="password" name="password" placeholder='Hasło'>
+                <button type="submit">Zaloguj</button>
+            </form>
+        </div>
+        </div>
+
+        <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
+            <button type="submit" name="log-out">Wyloguj się</button>
+        </form>
+
+        <div class="register-panel">
+            <p>Nie masz konta? </p>
+            <a href="./register.php"><b>Zarejestruj się</b></a>
+        </div>
+        </div>
+    </main>
+
+    <main>
+        <div class="kurwa">
+            <form action="log-in.php" method="post" <?php if ($showLogInForm) echo "hidden" ?>>
                 <input required type="text" name="login" placeholder='Nazwa'>
                 <input required type="password" name="password" placeholder='Hasło'>
                 <button type="submit">Zaloguj</button>
@@ -220,12 +202,12 @@ if (isset($_POST["password"], $_POST["login"])) {
                 <button type="submit" name="log-out">Wyloguj się</button>
             </form>
 
-            <div class="register-panel">
+            <!-- <div class="register-panel">
                 <p>Nie masz konta? </p>
                 <a href="./register.php"><b>Zarejestruj się</b></a>
-            </div></div>
-</div>
-</main>
+            </div> -->
+        </div>
+    </main>
 </body>
 
 </html>
