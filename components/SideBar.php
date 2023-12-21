@@ -9,8 +9,8 @@ define("SideBarItems", [
         "label" => "Kurierzy",
         "url"   => "./dashboard-delivery-men.php"
     ], [
-        "label" => "Klienci Serwisu",
-        "url"   => "./klienci.php"
+        "label" => "Przesyłki",
+        "url"   => "./dashboard-delivery.php"
     ], [
         "label" => "Kartoteka Sprzętu",
         "url"   => "./kartoteka.php"
