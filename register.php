@@ -15,7 +15,7 @@ require_once("db/connectDB.php");
     <link rel="shortcut icon" href="/assets/img/zdj.png">
     <title>Rejestracja</title>
     <style>
-         * {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -38,10 +38,10 @@ require_once("db/connectDB.php");
             background-color: #000;
             color: #fff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            
-         
-        
-           
+
+
+
+
         }
 
         main {
@@ -70,7 +70,8 @@ require_once("db/connectDB.php");
             border-radius: 4px;
         }
 
-        button {
+        a,button
+         {
             background-color: #000;
             color: #fff;
             padding: 10px 15px;
@@ -79,24 +80,25 @@ require_once("db/connectDB.php");
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+        /* #smk{   
+            background-color: #000;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        } */
 
         button:hover {
             background-color: #333;
         }
 
-        a {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
 
         a:hover {
             color: #ccc;
         }
+
 
         button[name="log-out"] {
             background-color: #d9534f;
@@ -121,7 +123,7 @@ if (isset($_POST["password"], $_POST["login"])) {
     $hash = password_hash(mysqli_real_escape_string(DB, trim($_POST['password'])), PASSWORD_DEFAULT);
 
     $foundUser = findUserByLogin($login);
-    if($foundUser)
+    if ($foundUser)
         echo "Login zajęty";
     else {
         $isSuccess = addUser($login, $hash, null);
@@ -144,10 +146,10 @@ if (isset($_POST["password"], $_POST["login"])) {
     <form action="register.php" method="post" <?php if (!$showLogInForm) echo "hidden" ?>>
         <input required type="text" name="login" placeholder='Nazwa'>
         <input required type="password" name="password" placeholder='Hasło'>
-        <button type="submit">Zarejestruj się</button>
+        <button type="submit">Zarejestruj się</button><a href="./log-in.php" id="smk">Logowanie</a>
     </form>
 
-    <a href="./log-in.php">Logowanie</a>
+
 </body>
 
 </html>

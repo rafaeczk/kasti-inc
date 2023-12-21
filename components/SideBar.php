@@ -1,19 +1,31 @@
+<link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <?php
 
 define("SideBarItems", [
     [
         "label" => "Start",
+        "icon" => "fa-solid fa-house",
         "url"   => "./dashboard-start.php"
     ],
     [
         "label" => "Kurierzy",
+        "icon" => "fa-solid fa-person-digging",
         "url"   => "./dashboard-delivery-men.php"
+    ], [
+        "label" => "Klienci Serwisu",
+        "icon" => "fa-solid fa-users",
+        "url"   => "./klienci.php"
     ], [
         "label" => "Przesyłki",
         "url"   => "./dashboard-delivery.php"
     ], [
         "label" => "Oddziały",
-        "url"   => "./dashboard-company-branches.php"
+        "url"   => "./dashboard-company-branches.php",
+    ], [
+        "label" => "Kartoteka Sprzętu",
+        "icon" => "",
+        "url"   => "./kartoteka.php"
     ]
 ]);
 
@@ -95,7 +107,7 @@ function SideBar(string $currentItem)
             <form action='log-in.php' method='post'>
                 <button type='submit' name='log-out' id='log-out-btn'>Wyloguj się</button>
             </form>
-            <div class='tenor-gif-embed' data-postid='18396886' data-share-method='host' data-aspect-ratio='1' data-width='100%'><a href='https://tenor.com/view/thumbs-up-okay-gif-18396886'></a>from <a href='https://tenor.com/search/thumbs-gifs'></a></div> <script type='text/javascript' async src='https://tenor.com/embed.js'></script>
+          
         </section>
     ";
 }
