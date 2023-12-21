@@ -14,11 +14,48 @@ require "components/Table.php";
     <link rel="stylesheet" href="styles/general.css">
     <title>Document</title>
     <style>
-        *{
-            color:  white;
+        
+        body {
+            background-color: #f4f4f4;
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: white;
+        }
+
+        * {
+            box-sizing: border-box;
             text-transform: uppercase;
-            font-size: 40px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        td a {
+            color: #3498db;
+            font-weight: bold;
         }
         </style>
 </head>
