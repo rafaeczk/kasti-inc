@@ -22,9 +22,11 @@ function Table(array $headers, array $data)
     $tbody = "<tbody>$tbody</tbody>";
 
     return "
-        <table class='table'>
-            $thead
-            $tbody
-        </table>
+        <div class='table-container'>
+            <table class='table'>
+                $thead
+                $tbody
+            </table>
+        </div>
     ";
 }

@@ -12,8 +12,8 @@ define("SideBarItems", [
         "label" => "Przesyłki",
         "url"   => "./dashboard-delivery.php"
     ], [
-        "label" => "Kartoteka Sprzętu",
-        "url"   => "./kartoteka.php"
+        "label" => "Oddziały",
+        "url"   => "./dashboard-company-branches.php"
     ]
 ]);
 
