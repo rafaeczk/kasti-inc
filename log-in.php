@@ -18,6 +18,7 @@ session_start();
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            text-transform: uppercase;
         }
 
         h1 {
@@ -167,10 +168,17 @@ if (isset($_POST["password"], $_POST["login"])) {
         echo"<style>
         .link{
             font-size;40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            color: #000;
             
         }
         </style>";
-        echo "wylogowano <a href id='link'>logowanie</a>";
+        echo "Wylogowano <a href id='link'>logowanie</a>";
         exit();
     }
 

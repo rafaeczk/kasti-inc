@@ -16,7 +16,7 @@ require "components/Table.php";
         *{
             color:  white;
             text-transform: uppercase;
-            font-size: 25px;
+            font-size: 40px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         </style>
