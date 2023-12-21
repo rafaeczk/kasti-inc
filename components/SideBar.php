@@ -32,6 +32,13 @@ function SideBar(string $currentItem)
         *{
         background-color:black;
         }
+        body{
+            border: 10px solid;
+            border-image: linear-gradient(45deg, gold, deeppink) 1;
+            clip-path: inset(0px round 10px);
+            animation: huerotate 6s infinite linear;
+            filter: hue-rotate(360deg);
+        }
             #sidebar {
                 position: fixed;
                 left: 0;
@@ -44,11 +51,7 @@ function SideBar(string $currentItem)
                 flex-direction: column;
                 gap: 10px;
                 padding: 50px 0;
-                border: 10px solid;
-                border-image: linear-gradient(45deg, gold, deeppink) 1;
-                clip-path: inset(0px round 10px);
-                animation: huerotate 6s infinite linear;
-                filter: hue-rotate(360deg);
+                
             }
             #sidebar > .sidebar-item {
                 color: #fff;
