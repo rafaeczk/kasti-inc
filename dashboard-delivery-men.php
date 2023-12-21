@@ -12,6 +12,11 @@ require "components/Table.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/general.css">
     <title>Document</title>
+    <style>
+        *{
+            color:  white;
+        }
+        </style>
 </head>
 <body>
 

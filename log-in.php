@@ -164,7 +164,13 @@ if (isset($_POST["password"], $_POST["login"])) {
 
     if (isset($_POST['log-out'], $_SESSION['userId'])) {
         $_SESSION['userId'] = null;
-        echo "wylogowano <a href>logowanie</a>";
+        echo"<style>
+        .link{
+            font-size;40px;
+            
+        }
+        </style>";
+        echo "wylogowano <a href id='link'>logowanie</a>";
         exit();
     }
 
