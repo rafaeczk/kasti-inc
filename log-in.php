@@ -179,8 +179,7 @@ if (isset($_POST["password"], $_POST["login"])) {
 
     <body>
         <div class="bok">
-            <img src="./assets/img/zdj.png">
-            <h1>KASTI INDUSTRIES</h1>
+          
             <br>
         </div>
         <?php
