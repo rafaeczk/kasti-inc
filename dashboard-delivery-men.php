@@ -15,14 +15,6 @@ require "components/Filters.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/general.css">
     <title>Document</title>
-    <style>
-        *{
-            color:  white;
-            text-transform: uppercase;
-            font-size: 40px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        </style>
 </head>
 <body>
 
