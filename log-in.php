@@ -126,7 +126,7 @@ session_start();
         }
 
         .error-message {
-            font-size: 18px;
+            font-size: 30px;
             color: red;
             margin-bottom: 20px;
 
