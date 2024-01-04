@@ -125,9 +125,11 @@ session_start();
         }
 
         .error-message {
-            font-size: 18px;
+            font-size: 30px;
             color: red;
             margin-bottom: 20px;
+            top: 250px;
+            text-transform: uppercase;
             
     position: fixed;
         }

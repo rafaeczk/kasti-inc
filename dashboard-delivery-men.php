@@ -16,49 +16,26 @@ require "components/Filters.php";
     <link rel="stylesheet" href="styles/general.css">
     <title>Document</title>
     <style>
-        
-        body {
-            background-color: #f4f4f4;
-            margin: 0;
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            color: white;
-        }
-
-        * {
-            box-sizing: border-box;
-            text-transform: uppercase;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #2c3e50;
-            color: white;
-        }
-
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-
-        td a {
-            color: #3498db;
-            font-weight: bold;
-        }
+       
+.table-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.table-container table.table {
+    border-collapse: collapse;
+    color: white,
+}
+.table-container table.table thead th {
+    padding: 5px 20px;
+    text-align: left;
+    font-size: 15px;
+    color: rgb(160, 160, 160);
+}
+.table-container table.table tbody td {
+    padding: 5px 20px;
+    font-size: 25px;
+    border-top: 1px solid gray;
+}
         </style>
 </head>
 <body>
