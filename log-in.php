@@ -128,8 +128,8 @@ session_start();
             font-size: 18px;
             color: red;
             margin-bottom: 20px;
-            
-    position: fixed;
+
+            position: fixed;
         }
     </style>
 </head>
@@ -149,12 +149,12 @@ session_start();
 
         $foundUser = findUserByLogin($login);
 
-        if (password_verify($password, $foundUser['password'])) {
+        if ($foundUser && password_verify($password, $foundUser['password'])) {
             $_SESSION['userId'] = $foundUser['id_konta'];
             header("location: dashboard-start.php");
         } else {
             echo "<style>.error-message{display:block;}</style>";
-            echo "<div class='error-message'>Błędne hasło</div>";
+            echo "<div class='error-message'>Błędny login lub hasło</div>";
         }
     }
     ?>
