@@ -128,6 +128,8 @@ session_start();
             font-size: 18px;
             color: red;
             margin-bottom: 20px;
+            
+    position: fixed;
         }
     </style>
 </head>
