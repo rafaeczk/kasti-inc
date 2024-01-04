@@ -1,7 +1,8 @@
 <?php
-require("db/users/findUserByLogin.php");
-require("db/users/findUserByUserId.php");
-require_once("db/connectDB.php");
+require "db/users/findUserByLogin.php";
+require "db/users/findUserByUserId.php";
+require "components/FormMessage.php";
+require_once "db/connectDB.php";
 session_start();
 ?>
 
@@ -136,6 +137,8 @@ session_start();
 
 <body>
     <?php
+    $error = null;
+
     if (isset($_POST['log-out'], $_SESSION['userId'])) {
         $_SESSION['userId'] = null;
         echo "<style>.success-message{display:block;}</style>";
@@ -153,8 +156,7 @@ session_start();
             $_SESSION['userId'] = $foundUser['id_konta'];
             header("location: dashboard-start.php");
         } else {
-            echo "<style>.error-message{display:block;}</style>";
-            echo "<div class='error-message'>Błędny login lub hasło</div>";
+            $error = "Błędny login lub hasło";
         }
     }
     ?>
@@ -177,8 +179,11 @@ session_start();
                 <input required type="text" name="login" placeholder='Nazwa'>
                 <input required type="password" name="password" placeholder='Hasło'>
                 <button type="submit">Zaloguj</button>
+                
+                <?php
+                    if($error) echo FormMessage("error", $error);
+                ?>
             </form>
-        </div>
         </div>
 
         <form action="log-in.php" method="post" <?php if (!isset($_SESSION['userId'])) echo "hidden" ?>>
