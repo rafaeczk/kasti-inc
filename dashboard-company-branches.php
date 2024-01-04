@@ -12,7 +12,7 @@ require "db/company-branches/getCompanyBranches.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/general.css">
-    <title>Document</title>
+    <title>Oddziały</title>
 </head>
 <body>
 

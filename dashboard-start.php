@@ -33,7 +33,7 @@ require "components/AuthGurad.php";
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>Strona Startowa</title>
 </head>
 
 <body>
