@@ -1,9 +1,10 @@
 <?php
 session_start();
-require("db/users/addUser.php");
-require("db/users/findUserByLogin.php");
-require("db/users/findUserByUserId.php");
-require_once("db/connectDB.php");
+require "db/users/addUser.php";
+require "db/users/findUserByLogin.php";
+require "db/users/findUserByUserId.php";
+require "components/FormMessage.php";
+require_once "db/connectDB.php";
 ?>
 
 <!DOCTYPE html>
@@ -118,16 +119,18 @@ require_once("db/connectDB.php");
 
 <?php
 
+$error = null;
+
 if (isset($_POST["password"], $_POST["login"])) {
     $login = mysqli_real_escape_string(DB, trim($_POST["login"]));
     $hash = password_hash(mysqli_real_escape_string(DB, trim($_POST['password'])), PASSWORD_DEFAULT);
 
     $foundUser = findUserByLogin($login);
     if ($foundUser)
-        echo "Login zajęty";
+        $error = "Login zajęty";
     else {
         $isSuccess = addUser($login, $hash, null);
-        echo $isSuccess ? "Zarejestrowano" : "coś zjebałeś";
+        echo $isSuccess ? "Zarejestrowano" : "błąd";
     }
 }
 
@@ -147,6 +150,9 @@ if (isset($_POST["password"], $_POST["login"])) {
         <input required type="text" name="login" placeholder='Nazwa'>
         <input required type="password" name="password" placeholder='Hasło'>
         <button type="submit">Zarejestruj się</button><a href="./log-in.php" id="smk">Logowanie</a>
+        <?php
+            if($error) echo FormMessage("error", $error);
+        ?>
     </form>
 
 
