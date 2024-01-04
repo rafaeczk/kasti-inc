@@ -14,6 +14,11 @@ define("SideBarItems", [
         "url"   => "./dashboard-delivery-men.php"
     ],
     [
+        "label" => "Nadawcy",
+        "icon" => "fa-solid fa-person-digging",
+        "url"   => "./dashboard-senders.php"
+    ],
+    [
         "label" => "Przesyłki",
         "url"   => "./dashboard-delivery.php"
     ], 
