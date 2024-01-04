@@ -15,28 +15,6 @@ require "components/Filters.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/general.css">
     <title>Document</title>
-    <style>
-       
-.table-container {
-    overflow-x: scroll;
-    white-space: nowrap;
-}
-.table-container table.table {
-    border-collapse: collapse;
-    color: white,
-}
-.table-container table.table thead th {
-    padding: 5px 20px;
-    text-align: left;
-    font-size: 15px;
-    color: rgb(160, 160, 160);
-}
-.table-container table.table tbody td {
-    padding: 5px 20px;
-    font-size: 25px;
-    border-top: 1px solid gray;
-}
-        </style>
 </head>
 <body>
 

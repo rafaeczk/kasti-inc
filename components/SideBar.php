@@ -12,21 +12,25 @@ define("SideBarItems", [
         "label" => "Kurierzy",
         "icon" => "fa-solid fa-person-digging",
         "url"   => "./dashboard-delivery-men.php"
-    ], [
-        "label" => "Klienci Serwisu",
-        "icon" => "fa-solid fa-users",
-        "url"   => "./klienci.php"
-    ], [
+    ],
+    [
         "label" => "Przesyłki",
         "url"   => "./dashboard-delivery.php"
-    ], [
+    ], 
+    [
         "label" => "Oddziały",
         "url"   => "./dashboard-company-branches.php",
-    ], [
+    ],
+    [
+        "label" => "Klienci Serwisu",
+        "icon" => "fa-solid fa-users",
+        "url"   => "./dashboard-clients.php"
+    ], 
+    [
         "label" => "Kartoteka Sprzętu",
         "icon" => "",
         "url"   => "./kartoteka.php"
-    ]
+    ],
 ]);
 
 function SideBar(string $currentItem)
