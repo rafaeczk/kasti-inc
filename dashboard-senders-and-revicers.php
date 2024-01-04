@@ -3,6 +3,7 @@ require 'components/Table.php';
 require 'components/Filters.php';
 require "components/SideBar.php";
 require 'db/senders/getSenders.php';
+require 'components/Tabs.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,14 @@ require 'db/senders/getSenders.php';
 
 <body>
     <?php
-        echo SideBar("Nadawcy");
+    echo SideBar("Nadawcy i odbiorcy");
+    ?>
+
+    <?php
+    echo Tabs([
+        ["label" => "Nadawcy", "value" => "senders"],
+        ["label" => "Odbiorcy", "value" => "revicers"],
+    ])
     ?>
 
     <?php
@@ -27,16 +35,14 @@ require 'db/senders/getSenders.php';
         ["type" => "text", "name" => "phone", "label" => "Telefon"],
         ["type" => "text", "name" => "city", "label" => "Miasto"],
     ]);
-    ?>
 
-    <?php
-        $senders = getSenders(
-            isset($_GET['names']) ? $_GET['names'] : null,
-            isset($_GET['email']) ? $_GET['email'] : null,
-            isset($_GET['phone']) ? $_GET['phone'] : null,
-            isset($_GET['city']) ? $_GET['city'] : null,
-        );
-        echo Table(['id', 'imię', 'nazwisko', 'email', 'telefon', 'ulica', 'nr domu', 'nr lokalu', 'kod', 'miasto'], $senders);
+    $senders = getSenders(
+        isset($_GET['names']) ? $_GET['names'] : null,
+        isset($_GET['email']) ? $_GET['email'] : null,
+        isset($_GET['phone']) ? $_GET['phone'] : null,
+        isset($_GET['city']) ? $_GET['city'] : null,
+    );
+    echo Table(['id', 'imię', 'nazwisko', 'email', 'telefon', 'ulica', 'nr domu', 'nr lokalu', 'kod', 'miasto'], $senders);
     ?>
 </body>
 
