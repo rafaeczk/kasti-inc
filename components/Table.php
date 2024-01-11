@@ -43,6 +43,7 @@ function Table(array $headers, array $data)
                 padding: 5px 20px;
                 font-size: 25px;
                 border-top: 1px solid gray;
+                color: white;
             }
         </style>
         <div class='table-container'>

@@ -40,6 +40,8 @@ define("SideBarItems", [
 
 function SideBar(string $currentItem)
 {
+    $id = "ID".rand();
+
     $items = "";
     foreach(SideBarItems as $i)
         $items .= "
@@ -50,9 +52,6 @@ function SideBar(string $currentItem)
 
     return "
         <style>
-        *{
-        background-color:black;
-        }
             #sidebar {
                 position: fixed;
                 left: 0;
